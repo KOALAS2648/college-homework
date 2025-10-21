@@ -2,4 +2,5 @@ Alex,Minecraft,54
 Ben,Fortnite,88
 Chloe,FIFA,42
 Dylan,Minecraft,71
-Ella,FIFA,1000
+Ella,FIFA,9
+oliver,Minecraft,100
