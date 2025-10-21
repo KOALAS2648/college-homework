@@ -27,6 +27,7 @@ def display_players_and_scores(data):
 def display_scores_for_game(data, gamename):
     for ans in data[gamename]["scores"]:
         print(f"{ans}")
+    print(f"the average score for {gamename} is: {sum(data[gamename]["scores"])/len(data[gamename]["scores"])}")
     input()
 
 def print_heightest_score(game, data):
