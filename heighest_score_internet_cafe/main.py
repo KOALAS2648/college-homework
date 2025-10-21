@@ -1,4 +1,24 @@
 import os
+def bubblesort(list):
+    maxidx = len(list)-1
+    sorted_list = list
+    while True:
+        #print(f"count:{count}")
+        swapped = False
+        for idx, number in enumerate(list):
+            if idx != maxidx:
+                compare = [list[idx], list[idx+1]]
+            if compare[1] < compare[0]: # value at idx is smaller than the value at idx + 1
+                sorted_list[idx]= compare[1]
+                if idx != maxidx:
+                    sorted_list[idx+1] = compare[0]
+                    swapped = True
+                else:
+                    sorted_list[-1] = compare[0]
+                    swapped = True
+        if not swapped:
+            break
+    return sorted_list
 def get_data(filename):
     file_data = list(open(filename, "r"))
     #print(file_data)
@@ -25,6 +45,7 @@ def display_players_and_scores(data):
         print(f"{value} got {data[value]['scores']} in {data[value]['game']}")
 
 def display_scores_for_game(data, gamename):
+    data[gamename]["scores"] = bubblesort(data[gamename]["scores"])
     for ans in data[gamename]["scores"]:
         print(f"{ans}")
     print(f"the average score for {gamename} is: {sum(data[gamename]["scores"])/len(data[gamename]["scores"])}")
